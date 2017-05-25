@@ -10,8 +10,7 @@ namespace ShoppingList.Models
         {
             Low,
             Medium,
-            High,
-            
+            High, 
         };
 
     public class ShoppingListItem
@@ -21,16 +20,17 @@ namespace ShoppingList.Models
         public int shoppingItemId { get; set; }
         public int shoppingListId { get; set; }
         public string ListContent { get; set; }
-        public Priority? Priority { get; set; }
+        public string NoteContent { get; set; }
         public bool IsChecked { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd)", ApplyFormatInEditMode = true)]
+        public Priority? Priority { get; set; }
+
+            
+       
         [Display(Name = "Creation Date")]
         public DateTimeOffset CreatedUtc { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd)", ApplyFormatInEditMode = true)]
+        
         [Display(Name = "Edited Date")]
-        public DateTimeOffset ModifiedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
 
 
     }
