@@ -54,23 +54,22 @@ namespace ShoppingList.Controllers
         }
 
 
-        // GET: ListShopping/Details/5
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    ListShopping listShopping = db.ShoppingLists.Find(id);
-        //    if (listShopping == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(listShopping);
-        //}
+       // GET: ListShopping/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ListShopping listShopping = db.ShoppingLists.Find(id);
+            if (listShopping == null)
+            {
+                return HttpNotFound();
+            }
+            return View(listShopping);
+        }
 
-  
+
 
         // POST: ListShopping/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -99,37 +98,35 @@ namespace ShoppingList.Controllers
 
 
 
-        // GET: ListShopping/Edit/5
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    ListShopping listShopping = db.ShoppingLists.Find(id);
-        //    if (listShopping == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(listShopping);
-        //}
+        //GET: ListShopping/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ListShopping listShopping = db.ShoppingLists.Find(id);
+            if (listShopping == null)
+            {
+                return HttpNotFound();
+            }
+            return View(listShopping);
+            }
 
-        // POST: ListShopping/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit([Bind(Include = "shoppingListId,UserId,ListName,Color,CreatedUtc,ModifiedUtc")] ListShopping listShopping)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Entry(listShopping).State = EntityState.Modified;
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(listShopping);
-        //}
+            // POST: ListShopping/Edit/5
+            // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+            // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+            [HttpPost]
+        public ActionResult Edit([Bind(Include = "shoppingListId,UserId,ListName,Color,CreatedUtc,ModifiedUtc")] ListShopping listShopping)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(listShopping).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(listShopping);
+        }
 
         //GET: ListShopping/Delete/5
         public ActionResult Delete(int? id)
