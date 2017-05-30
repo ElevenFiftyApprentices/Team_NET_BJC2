@@ -56,9 +56,9 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+<p class="btn btn-default">
+    @Html.ActionLink("Back to List", "Index", new { id = Model.shoppingListId })
+</p>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

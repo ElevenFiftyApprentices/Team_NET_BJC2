@@ -21,13 +21,14 @@ namespace ShoppingList.Models
         public int shoppingItemId { get; set; }
 
         public int shoppingListId { get; set; }
-
+        [Display(Name = "Item")]
         public string ListContent { get; set; }
 
         public Priority? Priority { get; set; }
 
         [DefaultValue(false)]
         public bool IsChecked { get; set; }
+        [Display(Name = "Note")]
         public string NoteContent { get; set; }
 
         [Display(Name = "Creation Date")]

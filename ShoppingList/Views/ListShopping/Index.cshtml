@@ -12,34 +12,35 @@
 
 <table class="table">
     <tr>
-       
+        
         <th>
             @Html.DisplayNameFor(model => model.ListName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Color)
         </th>
-       
-        <th></th>
+
+        <th>List Actions</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        
-        <td>
-            @Html.DisplayFor(modelItem => item.ListName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Color)
-        </td>
-       
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.shoppingListId }) |            
-            @Html.ActionLink("Details", "Details", new { id=item.shoppingListId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.shoppingListId }) |
-            <a href="@Url.Action("Index", "ListShoppingItem" ,new { id = item.shoppingListId } )"><span>Go To List</span></a>
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.ListName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+
+            <td>
+                <a href="@Url.Action("Edit", new { id = item.shoppingListId } )"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a href="@Url.Action("Delete", new { id = item.shoppingListId })" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                <a href="@Url.Action("Details", new { id = item.shoppingListId })" class="flag"><span class="glyphicon glyphicon-file"></span></a>
+                <a href="@Url.Action("Index", "ListShoppingItem" ,new { id = item.shoppingListId } )"><span class="glyphicon glyphicon-th-list"></span></a>
+            </td>
+        </tr>
+    }
 
 </table>
