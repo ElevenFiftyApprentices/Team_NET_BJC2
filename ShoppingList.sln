@@ -1,13 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26430.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingList.Web", "ShoppingList\ShoppingList.Web.csproj", "{9A95CF95-3039-42FF-94B4-72585B789B4D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingList.Data", "ShoppingList.Data\ShoppingList.Data.csproj", "{E544970E-15E1-4ABE-8A46-B2FE48644999}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingList.Services", "ShoppingList.Services\ShoppingList.Services.csproj", "{BD175ABD-DB76-45CB-B6BC-972421C5432C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "screenshots", "screenshots", "{0E27EA11-827C-40FC-B6F9-91D93F6DCDAD}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\Desktop\Capture.PNG = ..\..\..\..\..\Desktop\Capture.PNG
+		..\..\..\..\..\Desktop\Capture2.PNG = ..\..\..\..\..\Desktop\Capture2.PNG
+		..\..\..\..\..\Desktop\Capture3.PNG = ..\..\..\..\..\Desktop\Capture3.PNG
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
